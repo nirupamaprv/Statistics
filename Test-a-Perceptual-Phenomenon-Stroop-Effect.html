@@ -11793,8 +11793,8 @@ div#notebook {
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><a id='variables'></a></p>
 <h2 id="(1)-Variables">(1) Variables<a class="anchor-link" href="#(1)-Variables">&#182;</a></h2><h3 id="What-is-the-independent-variable?-What-is-the-dependent-variable?">What is the independent variable? What is the dependent variable?<a class="anchor-link" href="#What-is-the-independent-variable?-What-is-the-dependent-variable?">&#182;</a></h3><ul>
-<li>Independent variable is reaction time in word-color congruence test i.e. time taken in tests where the word and color of the printed word matched.</li>
-<li>Dependent variable is reaction time in word-color incongruence test i.e. time taken in tests where the word and color of the printed word did not match.</li>
+<li>Independent variable is word-color congruence/incongruence i.e. whether the printed word and font color presented to participants matched or not.</li>
+<li>Dependent variable is reaction time to the word-color patterns i.e. response time taken in tests to state the color of the printed font.</li>
 </ul>
 
 </div>
@@ -11812,7 +11812,9 @@ div#notebook {
 <h3 id="Hypothesis">Hypothesis<a class="anchor-link" href="#Hypothesis">&#182;</a></h3><ul>
 <li>Null Hypothesis -&gt;  $H_{0}$ : $t_{match}$ -  $t_{mismatch}$ = 0 # </li>
 <li>Alternate Hypothesis -&gt; $H_{1}$ : $t_{match}$ -  $t_{mismatch}$ != 0 </li>
-<li>$t_{match}$ is reaction time for Congruent set while $t_{mismatch}$ is reaction time for Incongruent set</li>
+<li>$t_{match}$ is mean population reaction time for Congruent set while $t_{mismatch}$ is mean population reaction time for Incongruent set</li>
+<li>In words, Null Hypothesis states that there is no difference in the mean response times for word-color congruent and incongruent sets.</li>
+<li>Alternate Hypothesis states that there is a difference in the mean response time to state the font color in word-color congruence set as compared to incongruent set.</li>
 </ul>
 <h3 id="Justification-for-paired-t-test-:">Justification for paired t-test :<a class="anchor-link" href="#Justification-for-paired-t-test-:">&#182;</a></h3><ul>
 <li>Here, the sample size is less than 30</li>
@@ -11836,7 +11838,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[24]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">## Import the packages</span>
@@ -11856,7 +11858,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[25]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># read dataset</span>
@@ -11876,7 +11878,7 @@ div#notebook {
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[25]:</div>
+<div class="prompt output_prompt">Out[3]:</div>
 
 
 
@@ -11942,7 +11944,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[26]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># inspect dataset values</span>
@@ -11980,7 +11982,7 @@ memory usage: 464.0 bytes
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[27]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Calculate descriptive statistics for dataframe values. This includes count, avaerage/ mean and interquartile ranges</span>
@@ -11997,7 +11999,7 @@ memory usage: 464.0 bytes
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[27]:</div>
+<div class="prompt output_prompt">Out[5]:</div>
 
 
 
@@ -12093,7 +12095,7 @@ Hence, we compute  the following values:</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[28]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># determine median</span>
@@ -12110,7 +12112,7 @@ Hence, we compute  the following values:</p>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[28]:</div>
+<div class="prompt output_prompt">Out[6]:</div>
 
 
 
@@ -12129,7 +12131,7 @@ dtype: float64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[29]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># determine variance</span>
@@ -12146,7 +12148,7 @@ dtype: float64</pre>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[29]:</div>
+<div class="prompt output_prompt">Out[7]:</div>
 
 
 
@@ -12165,7 +12167,7 @@ dtype: float64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[30]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># determine standard deviation</span>
@@ -12182,7 +12184,7 @@ dtype: float64</pre>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[30]:</div>
+<div class="prompt output_prompt">Out[8]:</div>
 
 
 
@@ -12211,7 +12213,7 @@ dtype: float64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[31]:</div>
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Build the visualizations here</span>
@@ -12225,7 +12227,7 @@ dtype: float64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[32]:</div>
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Build the visualizations for Congruent set</span>
@@ -12381,7 +12383,7 @@ AElFTkSuQmCC
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[33]:</div>
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Build the visualizations for Incongruent set</span>
@@ -12544,7 +12546,7 @@ fgUwOXcrfYw0wiYRcSdwCunOVLflWDZpsY1+FwOfknRzp2/OYfXmq3TM2pA0MSKW5SP8OcA5ETGn
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[34]:</div>
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># plotting reacton times for congruent and incongruent sets</span>
@@ -12753,7 +12755,7 @@ YWZmhThhmJlZIf8fpn3NmgHiDpEAAAAASUVORK5CYII=
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[35]:</div>
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># We calculate correlation between the reaction times for congruent and incongruent experiments to see relation if any</span>
@@ -12770,7 +12772,7 @@ YWZmhThhmJlZIf8fpn3NmgHiDpEAAAAASUVORK5CYII=
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[35]:</div>
+<div class="prompt output_prompt">Out[13]:</div>
 
 
 
@@ -12854,7 +12856,7 @@ YWZmhThhmJlZIf8fpn3NmgHiDpEAAAAASUVORK5CYII=
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[36]:</div>
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Evaluate Sample Size from shape function applied to dataset</span>
@@ -12887,7 +12889,7 @@ YWZmhThhmJlZIf8fpn3NmgHiDpEAAAAASUVORK5CYII=
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[37]:</div>
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Get distribution of Congruent experiment values</span>
@@ -12903,7 +12905,7 @@ YWZmhThhmJlZIf8fpn3NmgHiDpEAAAAASUVORK5CYII=
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[38]:</div>
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># We have to calculate the Standard Deviation. Hence, first we compute the variance</span>
@@ -12940,7 +12942,7 @@ YWZmhThhmJlZIf8fpn3NmgHiDpEAAAAASUVORK5CYII=
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[39]:</div>
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">## Calculate the Standard Deviation</span>
@@ -12973,14 +12975,13 @@ YWZmhThhmJlZIf8fpn3NmgHiDpEAAAAASUVORK5CYII=
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[40]:</div>
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">## Calculate the t-statistics using formula</span>
-<span class="n">t</span> <span class="o">=</span> <span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="o">-</span> <span class="n">b</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span><span class="o">/</span><span class="p">(</span><span class="n">s</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="o">/</span><span class="n">N</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;t-value is </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>
-
-<span class="c1"># Here, negative sign indicates direction</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Calculate mean for Congruent and Incongruent sets</span>
+<span class="n">a_mean</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">b_mean</span> <span class="o">=</span> <span class="n">b</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Mean for Congruent and Incongruent response times are </span><span class="si">{}</span><span class="s2"> and </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">a_mean</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span> <span class="nb">round</span><span class="p">(</span><span class="n">b_mean</span><span class="p">,</span><span class="mi">4</span><span class="p">)))</span>
 </pre></div>
 
 </div>
@@ -12997,7 +12998,7 @@ YWZmhThhmJlZIf8fpn3NmgHiDpEAAAAASUVORK5CYII=
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>t-value is -6.5322505539032285
+<pre>Mean for Congruent and Incongruent response times are 14.0511 and 22.0159
 </pre>
 </div>
 </div>
@@ -13008,13 +13009,12 @@ YWZmhThhmJlZIf8fpn3NmgHiDpEAAAAASUVORK5CYII=
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[41]:</div>
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># We need to compare degree of freedom with the critical t-value</span>
-<span class="c1"># So, we calculate Degrees of freedom using the formula</span>
-<span class="n">degF</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">N</span> <span class="o">-</span> <span class="mi">2</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Degree of Freedom is </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">degF</span><span class="p">))</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Point Estimate for Null Hypothesis</span>
+<span class="n">mean_diff</span> <span class="o">=</span> <span class="n">a_mean</span> <span class="o">-</span> <span class="n">b_mean</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mean_diff</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -13031,7 +13031,7 @@ YWZmhThhmJlZIf8fpn3NmgHiDpEAAAAASUVORK5CYII=
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Degree of Freedom is 46
+<pre>-7.964791666666665
 </pre>
 </div>
 </div>
@@ -13042,13 +13042,12 @@ YWZmhThhmJlZIf8fpn3NmgHiDpEAAAAASUVORK5CYII=
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[42]:</div>
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Calculate p-value</span>
-<span class="n">p</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">stats</span><span class="o">.</span><span class="n">t</span><span class="o">.</span><span class="n">cdf</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">degF</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;p-value is </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">p</span><span class="p">))</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># calculate differences between the two response times</span>
+<span class="n">diff</span> <span class="o">=</span> <span class="n">a</span> <span class="o">-</span> <span class="n">b</span>
+<span class="n">diff</span>
 </pre></div>
 
 </div>
@@ -13061,13 +13060,39 @@ YWZmhThhmJlZIf8fpn3NmgHiDpEAAAAASUVORK5CYII=
 
 <div class="output_area">
 
-<div class="prompt"></div>
+<div class="prompt output_prompt">Out[20]:</div>
 
 
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>p-value is 0.9999999770252552
-</pre>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>0     -7.199
+1     -1.950
+2    -11.650
+3     -7.057
+4     -8.134
+5     -8.640
+6     -9.880
+7     -8.407
+8    -11.361
+9    -11.802
+10    -2.196
+11    -3.346
+12    -2.437
+13    -3.401
+14   -17.055
+15   -10.028
+16    -6.644
+17    -9.790
+18    -6.081
+19   -21.919
+20   -10.950
+21    -3.727
+22    -2.348
+23    -5.153
+dtype: float64</pre>
 </div>
+
 </div>
 
 </div>
@@ -13076,13 +13101,13 @@ YWZmhThhmJlZIf8fpn3NmgHiDpEAAAAASUVORK5CYII=
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[45]:</div>
+<div class="prompt input_prompt">In&nbsp;[27]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;t-value is </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">t</span><span class="p">)))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;p-value is </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">p</span><span class="p">))</span>
-<span class="c1"># Here, we multiply the p value by 2 because it&#39;s a two tail t-test</span>
-<span class="c1"># After comparing the t statistic with the critical t value, we get p-values as 1.9999. </span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Mean of difference in response times</span>
+<span class="n">mean_diff_resp_time</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="n">diff</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">mean_diff_resp_time</span>
+<span class="c1"># Note value same as point estimate</span>
 </pre></div>
 
 </div>
@@ -13095,14 +13120,74 @@ YWZmhThhmJlZIf8fpn3NmgHiDpEAAAAASUVORK5CYII=
 
 <div class="output_area">
 
-<div class="prompt"></div>
+<div class="prompt output_prompt">Out[27]:</div>
 
 
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>t-value is 6.5322505539032285
-p-value is 1.9999999540505105
-</pre>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>-7.9648</pre>
 </div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[36]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Calculate squared deviations from the mean</span>
+<span class="n">sq_dev_from_mean</span> <span class="o">=</span> <span class="p">(</span><span class="n">diff</span> <span class="o">-</span> <span class="n">mean_diff_resp_time</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
+<span class="n">sq_dev_from_mean</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[36]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>0       0.586450
+1      36.177819
+2      13.580699
+3       0.824101
+4       0.028629
+5       0.455895
+6       3.667991
+7       0.195541
+8      11.534174
+9      14.724104
+10     33.279053
+11     21.333313
+12     30.556573
+13     20.828270
+14     82.631736
+15      4.256794
+16      1.744513
+17      3.331355
+18      3.548702
+19    194.719698
+20      8.911419
+21     17.958949
+22     31.548442
+23      7.906219
+dtype: float64</pre>
+</div>
+
 </div>
 
 </div>
@@ -13114,10 +13199,8 @@ p-value is 1.9999999540505105
 <div class="prompt input_prompt">In&nbsp;[46]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">## Cross Checking with the internal scipy function</span>
-<span class="n">t2</span><span class="p">,</span> <span class="n">p2</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">ttest_ind</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;t-value is </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">t2</span><span class="p">)))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;p-value is </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">p2</span><span class="p">))</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">std_dev_sq</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">sq_dev_from_mean</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">N</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">std_dev_sq</span>
 </pre></div>
 
 </div>
@@ -13130,14 +13213,85 @@ p-value is 1.9999999540505105
 
 <div class="output_area">
 
-<div class="prompt"></div>
+<div class="prompt output_prompt">Out[46]:</div>
 
 
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>t-value is 6.5322505539032285
-p-value is 9.189897924590371e-08
-</pre>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>23.666540867826093</pre>
 </div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[49]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#calculate standard deviation for sample</span>
+<span class="n">sample_std_dev</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">std_dev_sq</span><span class="p">)</span>
+<span class="n">sample_std_dev</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[49]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>4.864826910366503</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[50]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># calculate t-value</span>
+<span class="n">t</span> <span class="o">=</span> <span class="p">(</span><span class="n">mean_diff_resp_time</span><span class="o">/</span><span class="n">sample_std_dev</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">N</span><span class="p">))</span>
+<span class="n">t</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[50]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>-8.020715335933565</pre>
+</div>
+
 </div>
 
 </div>
@@ -13148,13 +13302,15 @@ p-value is 9.189897924590371e-08
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Observations-&amp;-Hypothesis-Conclusions">Observations &amp; Hypothesis Conclusions<a class="anchor-link" href="#Observations-&amp;-Hypothesis-Conclusions">&#182;</a></h4><ul>
-<li>As calculated t-value is greater than p-value, we reject the null hypothesis.</li>
-<li>That is, we reject the null hypothesis that the reaction times are not different.</li>
-<li>We accept the Alternate Hypothesis that reaction times are different and that Stroop effect is valid.</li>
-<li>Thus, proved that the two distributions are different and statistically significant.</li>
-<li>Note: Here, we disregard the negative sign of the t-values as it is only indicative of direction.</li>
-<li>Confidence interval used is 95%</li>
+<p>Observations:</p>
+<ul>
+<li>We assume alpha values of 0.05</li>
+<li>Hence, we have 0.025 in each tail</li>
+<li>With N-1 degrees of freedon, ie. 23, we get positive and negative t-critical values from t-table </li>
+<li>These are : +2.069 and -2.069</li>
+<li>As our t-value value is beyond the t-critical values, we reject the Null Hypothesis</li>
+<li>It takes less time with color-word match than mismatch.</li>
+<li>Being an experimental design, we can make a causal statement that the Stroop efect holds and that word-color congruence does impact the response time.</li>
 </ul>
 
 </div>
